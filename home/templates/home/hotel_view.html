@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{disc.caption}}
+{% endblock %}
+
+{% block css %}
+<style>
+    .butdes{
+        border: 2px solid black;
+        background-color: orange;
+    }
+</style>
+{% endblock %}
+
+
+{% block body %}
+
+
+<div class="hero-wrap js-fullheight" style="background-image: url('/static/images/bg_3.jpg');">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
+        <div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+          <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span>Tour</span></p>
+          <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Destination</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="container my-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row">
+                <img src="{{hot.hotel_img.url}}" width="300px" height="340px">
+            </div>
+        </div>
+        <div class="col-md-8">
+            <h1>{{hot.hotel_name}}</h1>btn btn-success btn-rounded
+            <hr style="border-top: solid 2px black;">
+            <span>Best Hotels in the City</span>
+            <h4>{{hot.hotel_name}} has the best facilities .</h4>
+            <p class="rate mb-5">
+                <span class="loc"><a href="#"><i class="icon-map"></i> 291 South 21th Street, Suite 721 New York NY 10016</a></span>
+                <span class="star">
+                      <i class="icon-star"></i>
+                      <i class="icon-star"></i>
+                      <i class="icon-star"></i>
+                      <i class="icon-star"></i>
+                      <i class="icon-star-o"></i>
+                      8 Rating</span>
+                  </p>
+                        <h3>Price : ${{hot.price}}</h3>
+                  <p>{{hot.desc}}</p>
+            <div class="col-md-12 hotel-single ftco-animate mb-5 mt-4">
+                <h4 class="mb-4">Take A Room Tour</h4>
+                <div class="block-16">
+                <figure>
+                  <img src="/static/images/hotel-6.jpg" alt="Image placeholder" class="img-fluid">
+                  <a href="https://vimeo.com/45830194" class="play-button popup-vimeo"><span class="icon-play"></span></a>
+                </figure>
+              </div>
+            </div>
+            <button class="btn btn-success btn-rounded" style="margin-left: 300px;"><a href="payment/" style="color: black; ">Payment</a></button>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}

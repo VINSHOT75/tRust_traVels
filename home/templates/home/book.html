@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block title %}
+About
+{% endblock %}
+
+{% block body %}
+<div class="adjust">
+<h2 style="margin-left: 80px;">Registration</h2>
+
+<form action="#" method="post"  enctype="multipart/form-data">
+    {% csrf_token %}
+    {% for field in form.visible_fields %}
+        <div class="form-group" style="width: 400px; margin-left: 10px;">
+            {{ field.label_tag }}
+               {% render_field field class="form-control" %}
+                 {% for error in field.errors %}
+                   <span style="color:red">{{ error }}</span>
+                 {% endfor %}
+      {% endfor %}
+
+    <button type="submit" class="btn btn-lg btn-success" id="butt" style="margin: 40px 0px;" >Checkout</button>
+        </div>
+
+  </form>
+      </div>
+
+{% endblock %}
+

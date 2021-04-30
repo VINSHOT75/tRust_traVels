@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+{% block body %}
+
+<div class="adjust">
+<div class="container" >
+  <h3 style="text-decoration: solid; font-family: arial, sans-serif;">
+    Login Page
+  </h3>
+   <hr style="border-top: solid 2px black;">
+    <form action="#" method="POST">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">User Name</label>
+        <input type="text" name="username" placeholder="Enter username " class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" placeholder="Enter password" id="exampleInputPassword1">
+      </div>
+      <button type="submit" class="btn btn-success btn-rounded">Submit</button>
+    </form>
+    <div><a href="signup/">Sign up here</a></div>
+    <div style="margin-bottom: 50px;"><a href="/login/password_reset/">Frogot Password</a></div>
+  </div>
+</div>
+{% endblock %}

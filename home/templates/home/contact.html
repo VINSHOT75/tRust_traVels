@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}
+home
+{% endblock %}
+
+
+
+{% block body %}
+<div class="adjust">
+    <div class="container" style="margin-top: 35px;">
+        <h3>Contact Here </h3>
+        <hr>
+        <form action="#" method="POST">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Name</label>
+            <input type="text" name="name" placeholder="Enter username " class="form-control" id="exampleInputEmail1"
+              aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" placeholder="Enter Email" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Subject</label>
+            <input type="text" class="form-control" name="subject" placeholder="Enter subject"
+              id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Message</label>
+            <input type="text" class="form-control" name="message" placeholder="Enter Message"
+              id="exampleInputPassword1">
+          </div>
+          <button type="submit" class="btn btn-primary" style="margin-bottom: 20px;">Submit</button>
+        </form>
+
+      </div>
+
+        {% for message in messages %}
+        <h4 style="background-color: lightgreen; margin-top: 10px ;margin-left: 40px; width: 800px;">
+          {{message}}
+        </h4>
+
+        {% endfor %}
+</div>
+        {% endblock %}
+</body>
+</html>

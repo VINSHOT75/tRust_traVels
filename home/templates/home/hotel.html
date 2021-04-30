@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Hotels
+{% endblock %}
+
+
+{% block body %}
+<div class="hero-wrap js-fullheight" style="background-image: url('/static/images/bg_5.jpg');">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
+        <div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+          <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span>Hotel</span></p>
+          <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Hotels</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="ftco-section ftco-degree-bg">
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-3 sidebar ftco-animate">
+              <div class="sidebar-wrap bg-light ftco-animate">
+                  <h3 class="heading mb-4">Find Hotel</h3>
+                  <form action="/hotel_search" method="GET">
+                      <div class="fields">
+                    <div class="form-group">
+                      <input type="text" name="search" class="form-control" placeholder="Hotel">
+                    </div>
+
+                    <div class="form-group">
+                      <input type="submit" value="Search" class="btn btn-primary py-3 px-5">
+                    </div>
+                  </div>
+              </form>
+              </div>
+
+        </div>
+        <div class="col-lg-9">
+          <h2>Hotels List </h2>
+          <hr style="border-top: solid 2px black;">
+            <div class="row">
+                {% for i in hott %}
+                <div class="col-sm col-md-6 col-lg ftco-animate">
+                    <div class="destination">
+                      <img  class="img img-2 d-flex justify-content-center align-items-center" src=" {{i.hotel_img.url}}"
+                      style="height: 250px ; width:300px;" >
+                        <!-- <div class="icon d-flex justify-content-center align-items-center"> -->
+                          <!-- <span class="icon-search2"></span> -->
+                        </div>
+                      </a>
+                      <div class="text p-3">
+                        <div class="d-flex">
+                          <div class="one">
+                            <h3><a href="#">{{i.hotel_name}}</a></h3>
+                            <p class="rate">
+                              <i class="icon-star"></i>
+                              <i class="icon-star"></i>
+                              <i class="icon-star"></i>
+                              <i class="icon-star"></i>
+                              <i class="icon-star-o"></i>
+                              <span>8 Rating</span>
+                            </p>
+                          </div>
+                          <div class="two">
+                            <span class="price">${{i.price}}</span>
+                          </div>
+                        </div>
+                        <p>{{i.desc|slice:"0:80"}}...</p>
+                        <p class="days"><span>{{i.days}} days 3 nights</span></p>
+                        <hr>
+                        <p class="bottom-area d-flex">
+
+                          <button id="qv{{id.id}}" ><a href="{{i.id}}/">View Hotel</a></button>
+                        </p>
+                      </div>
+                    </div>
+
+                      {%endfor%}
+
+
+            </div>
+
+        </div> <!-- .col-md-8 -->
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  {% endblock %}

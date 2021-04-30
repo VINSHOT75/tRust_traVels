@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block title %}
+profile
+{% endblock %}
+{% block css %}
+<style>
+
+
+
+
+
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    font-family: 'Manrope', sans-serif;
+    line-height: 0.7rem
+}
+
+p,
+span,
+h6 {
+    font-size: 0.75rem
+}
+
+.grey {
+    color: #bcbbc0
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    color: #9e9bb0;
+    color: rebeccapurple
+}
+
+.paid {
+    color: #64d1d6;
+    font-size: 0.8rem
+}
+
+#sp1 {
+    height: 30%;
+    font-size: 0.75rem
+}
+
+.light-hr {
+    border-top: 0.6px solid rgba(0, 0, 0, .1)
+}
+
+*:focus {
+    outline: none
+}
+</style>
+{% endblock %}
+{% block body %}
+<div class="adjust">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-11 col-md-4 col-sm-10 col-xs-10">
+                <h1>My Profile</h1>
+                <div class="card ">
+                    <div class="row">
+                        <div class="col-3 col-md-3 px-0"> <img src="https://i.imgur.com/NDCotSt.jpg" height="100%" width="100%" alt=""> </div>
+                        <div class="col-9 col-md-9 px-0 pr-2 py-2 py-md-3">
+                            <div class="d-flex justify-content-between px-3 px-md-4">
+                                <div>
+                                    <h6 class="">{{user.username}}</h6>
+                                    <p class="">{{user.first_name}} {{user.last_name}}</p>
+                                    <p class="grey">{{user.email}}</p>
+                                </div>
+                            <div><a href="edit">edit</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

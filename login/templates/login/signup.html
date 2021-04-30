@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+signup
+{% endblock %}
+{% block body %}
+<div class="adjust">
+    <div class="container">
+         <h3 style="text-decoration: solid; font-family: arial, sans-serif;">
+           SignUp Page
+         </h3>
+          <hr style="border-top: solid 2px black;">
+        <form action="#" method="POST">
+          {% csrf_token %}
+          <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" name="first_name" placeholder="Enter first Name" aria-describedby="emailHelp" Required>
+          </div>
+          <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" name="last_name" placeholder="Enter last Name" aria-describedby="emailHelp" Required>
+          </div>
+          <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">User Name</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" name="username" placeholder="Enter user Name" aria-describedby="emailHelp" Required>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="Enter Email" aria-describedby="emailHelp" Required>
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Enter password (must be eight characters long)" Required>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="password1" placeholder="Confirm password" Required>
+          </div>
+          <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+          <button type="submit" class="btn btn-success btn-rounded">Submit</button>
+        </form>
+      </div>
+</div>
+{% endblock %}
